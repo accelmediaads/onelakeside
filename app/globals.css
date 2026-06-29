@@ -1,0 +1,240 @@
+@import "tailwindcss";
+
+/* ========================================
+   LHNI — Luxury Homes North Idaho
+   Global Styles
+   ======================================== */
+
+:root {
+  --lhni-bg: #0a0a0a;
+  --lhni-bg-deep: #050505;
+  --lhni-fg: #f5f5f5;
+  --lhni-gold: #c9a96e;
+  --lhni-gold-light: #dfc291;
+  --lhni-gold-dark: #a8884d;
+  --lhni-muted: #8a8a8a;
+  --lhni-surface: #111111;
+  --lhni-surface-light: #1a1a1a;
+  --lhni-border: #222222;
+}
+
+@theme inline {
+  --color-background: var(--lhni-bg);
+  --color-foreground: var(--lhni-fg);
+  --color-gold: var(--lhni-gold);
+  --color-gold-light: var(--lhni-gold-light);
+  --color-muted: var(--lhni-muted);
+  --color-surface: var(--lhni-surface);
+  --color-surface-light: var(--lhni-surface-light);
+  --color-border: var(--lhni-border);
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-heading: "Montserrat", system-ui, -apple-system, sans-serif;
+}
+
+/* Montserrat for headlines — matching luxuryhomesnorthidaho.com */
+.lhni h1,
+.lhni h2,
+.lhni h3,
+.lhni .font-heading {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 300;
+}
+
+/* Base */
+html {
+  background: var(--lhni-bg);
+  color: var(--lhni-fg);
+  scroll-behavior: auto;
+}
+
+body {
+  background: var(--lhni-bg);
+  color: var(--lhni-fg);
+  overflow-x: hidden;
+}
+
+.lhni {
+  background: var(--lhni-bg);
+  color: var(--lhni-fg);
+}
+
+.lhni a:hover {
+  color: var(--lhni-gold);
+}
+
+/* Lenis smooth scroll */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+/* Selection */
+.lhni ::selection {
+  background: var(--lhni-gold);
+  color: var(--lhni-bg);
+}
+
+/* GSAP */
+[data-gsap] { visibility: hidden; }
+.pin-spacer { background: transparent !important; }
+.horizontal-scroll-container { display: flex; flex-wrap: nowrap; will-change: transform; }
+.split-line { overflow: hidden; }
+.split-word, .split-char { display: inline-block; will-change: transform, opacity; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--lhni-bg); }
+::-webkit-scrollbar-thumb { background: var(--lhni-border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--lhni-muted); }
+
+/* Gradient overlays */
+.lhni-gradient-overlay {
+  background: linear-gradient(to bottom, rgba(10,10,10,0.3) 0%, rgba(10,10,10,0.7) 60%, rgba(10,10,10,0.95) 100%);
+}
+.lhni-gradient-overlay-top {
+  background: linear-gradient(to top, transparent 0%, rgba(10,10,10,0.8) 100%);
+}
+
+/* Gold underline */
+.lhni-gold-line { display: block; width: 60px; height: 2px; background: var(--lhni-gold); }
+
+/* Stat card */
+.lhni-stat-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.lhni-stat-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(201,169,110,0.1); }
+
+/* Testimonial card */
+.lhni-testimonial-card { background: var(--lhni-surface); border: 1px solid var(--lhni-border); transition: border-color 0.3s ease; }
+.lhni-testimonial-card:hover { border-color: var(--lhni-gold-dark); }
+
+/* Community card */
+.lhni-community-card img { transition: transform 0.6s ease; }
+.lhni-community-card:hover img { transform: scale(1.05); }
+
+/* Form inputs */
+.lhni-input { background: var(--lhni-surface); border: 1px solid var(--lhni-border); color: var(--lhni-fg); transition: border-color 0.3s ease; }
+.lhni-input:focus { border-color: var(--lhni-gold); outline: none; box-shadow: 0 0 0 2px rgba(201,169,110,0.15); }
+.lhni-input::placeholder { color: var(--lhni-muted); opacity: 0.6; }
+
+/* Gold CTA button */
+.lhni-btn-gold { background: var(--lhni-gold); color: var(--lhni-bg); font-weight: 600; transition: background 0.3s ease, transform 0.2s ease; }
+.lhni-btn-gold:hover { background: var(--lhni-gold-light); transform: translateY(-1px); }
+.lhni-btn-gold:active { transform: translateY(0); }
+
+/* Outline button */
+.lhni-btn-outline { background: transparent; border: 1px solid var(--lhni-gold); color: var(--lhni-gold); font-weight: 600; transition: background 0.3s ease, color 0.3s ease; }
+.lhni-btn-outline:hover { background: var(--lhni-gold); color: var(--lhni-bg); }
+
+/* Divider */
+.lhni-divider { border: none; height: 1px; background: var(--lhni-border); }
+
+/* ========================================================================
+   ONE LAKESIDE — light "waterfront resort" theme
+   Scoped override of the dark .lhni theme. Keeps the brass-gold brand thread
+   but flips to airy whites / soft mist / charcoal for the lakeside condo LP.
+   Applied via a .one-lakeside wrapper on /one-lakeside only.
+   ======================================================================== */
+.one-lakeside {
+  --ol-bg: #faf8f5;          /* warm white page */
+  --ol-bg-alt: #f1eee8;      /* soft sand / mist alt section */
+  --ol-bg-deep: #e9e4db;     /* slightly deeper band */
+  --ol-ink: #1f2a30;         /* deep charcoal-teal body ink */
+  --ol-ink-soft: #50606a;    /* muted slate text */
+  --ol-ink-faint: #8a97a0;   /* captions / fine print */
+  --ol-gold: #b08d4f;        /* brass gold (a touch deeper for light-bg contrast) */
+  --ol-gold-light: #c9a96e;  /* lighter gold */
+  --ol-line: #ddd6ca;        /* hairline borders on light */
+  --ol-card: #ffffff;        /* white cards */
+
+  background: var(--ol-bg);
+  color: var(--ol-ink);
+}
+
+/* Headings: soft serif, sentence-case (override the dark theme's uppercase
+   Montserrat). Gives the lakeside page its lighter, resort identity.
+   NOTE: deliberately no `color` here — headings inherit ink from the
+   .one-lakeside container, which lets a `text-white` utility win on the
+   photo-overlay hero / location headings (an element-level color rule would
+   out-specify the utility class). */
+.one-lakeside h1,
+.one-lakeside h2,
+.one-lakeside h3 {
+  font-family: var(--font-cormorant), Georgia, "Times New Roman", serif;
+  text-transform: none;
+  letter-spacing: 0.005em;
+  font-weight: 500;
+}
+
+.one-lakeside a:hover { color: var(--ol-gold); }
+.one-lakeside ::selection { background: var(--ol-gold); color: #fff; }
+
+/* Gold eyebrow / overline */
+.ol-eyebrow {
+  color: var(--ol-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  font-family: var(--font-montserrat), system-ui, sans-serif;
+  font-weight: 500;
+}
+
+/* Thin gold rule */
+.ol-gold-line { display: block; width: 56px; height: 2px; background: var(--ol-gold); }
+
+/* Light card */
+.ol-card {
+  background: var(--ol-card);
+  border: 1px solid var(--ol-line);
+  box-shadow: 0 1px 2px rgba(31,42,48,0.04), 0 12px 30px rgba(31,42,48,0.05);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+.ol-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 2px 4px rgba(31,42,48,0.06), 0 22px 50px rgba(31,42,48,0.10);
+  border-color: var(--ol-gold-light);
+}
+
+/* Image hover zoom helper */
+.ol-zoom img { transition: transform 0.7s ease; }
+.ol-zoom:hover img { transform: scale(1.05); }
+
+/* Solid gold CTA (works as-is on light) */
+.ol-btn-gold {
+  background: var(--ol-gold);
+  color: #fff;
+  font-family: var(--font-montserrat), system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 22px rgba(176,141,79,0.28);
+}
+.ol-btn-gold:hover { background: var(--ol-gold-light); color: #fff; transform: translateY(-1px); }
+.ol-btn-gold:active { transform: translateY(0); }
+
+/* Outline CTA on light */
+.ol-btn-outline {
+  background: transparent;
+  border: 1px solid var(--ol-gold);
+  color: var(--ol-gold);
+  font-family: var(--font-montserrat), system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.ol-btn-outline:hover { background: var(--ol-gold); color: #fff; }
+
+/* Light form inputs (override the dark .lhni-input) */
+.one-lakeside .ol-input {
+  background: #fff;
+  border: 1px solid var(--ol-line);
+  color: var(--ol-ink);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.one-lakeside .ol-input:focus {
+  border-color: var(--ol-gold);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(176,141,79,0.15);
+}
+.one-lakeside .ol-input::placeholder { color: var(--ol-ink-faint); }
+
+.ol-divider { border: none; height: 1px; background: var(--ol-line); }

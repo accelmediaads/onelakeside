@@ -1,0 +1,19 @@
+# Netlify config for the One Lakeside landing site (standalone Next.js app).
+# The official Next.js runtime plugin handles the build + serverless functions
+# (the /api/lead route runs as a function).
+
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# Security headers (mirrors the LHNI site's posture).
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"

@@ -1,0 +1,18 @@
+node_modules
+.next
+.env
+.env.local
+*.tsbuildinfo
+next-env.d.ts
+
+# OS / editor noise
+.DS_Store
+
+# Local-only operational backups that contain customer PII —
+# never commit (per SECURITY-CLAUDE.md guardrails on secrets / credentials)
+.fub-backups/
+
+# Internal Claude Code working docs — contain ad budgets, account/campaign IDs,
+# dispute SyncIDs, and personal contact info. This repo is PUBLIC; keep local only.
+CLAUDE.md
+IN-FLIGHT.md
