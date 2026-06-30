@@ -25,6 +25,10 @@ export default function LenisProvider({ children }: LenisProviderProps) {
     });
 
     lenisRef.current = lenis;
+    // Expose the instance so modals/lightboxes can pause smooth-scroll while
+    // open (overflow:hidden alone doesn't stop Lenis, which makes the page feel
+    // "sticky" behind a fullscreen modal on mobile). See lib/scrollLock.ts.
+    (window as unknown as { __lenis?: Lenis }).__lenis = lenis;
 
     // Sync Lenis scroll with GSAP ScrollTrigger
     lenis.on("scroll", ScrollTrigger.update);
@@ -38,6 +42,7 @@ export default function LenisProvider({ children }: LenisProviderProps) {
     return () => {
       lenis.destroy();
       gsap.ticker.remove(lenis.raf);
+      delete (window as unknown as { __lenis?: Lenis }).__lenis;
     };
   }, []);
 

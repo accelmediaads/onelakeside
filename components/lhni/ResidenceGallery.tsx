@@ -2,6 +2,8 @@
 
 /* eslint-disable @next/next/no-img-element */
 import { useState, useEffect, useCallback, useRef } from "react";
+import { createPortal } from "react-dom";
+import { lockScroll, unlockScroll } from "@/lib/scrollLock";
 
 interface GalleryImage {
   src: string;
@@ -47,11 +49,10 @@ export default function ResidenceGallery({
       else if (e.key === "ArrowRight") next();
     };
     window.addEventListener("keydown", onKey);
-    const prevOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
+    lockScroll();
     return () => {
       window.removeEventListener("keydown", onKey);
-      document.body.style.overflow = prevOverflow;
+      unlockScroll();
     };
   }, [open, close, prev, next]);
 
@@ -115,8 +116,11 @@ export default function ResidenceGallery({
         })}
       </div>
 
-      {/* Lightbox */}
-      {open && index !== null && (
+      {/* Lightbox — portaled to <body> so `position: fixed` pins to the viewport
+          rather than the GSAP-transformed FadeIn wrapper this sits inside. */}
+      {open &&
+        index !== null &&
+        createPortal(
         <div
           className="fixed inset-0 z-[100] bg-black/92 flex flex-col select-none"
           role="dialog"
@@ -149,12 +153,13 @@ export default function ResidenceGallery({
             <button
               type="button"
               onClick={close}
-              className="w-9 h-9 flex items-center justify-center rounded-full hover:bg-white/10 transition-colors"
+              className="shrink-0 inline-flex items-center gap-2 bg-white text-[#1f2a30] hover:bg-white/90 transition-colors rounded-full pl-3 pr-4 py-2 text-sm font-semibold shadow-lg"
               aria-label="Close gallery"
             >
-              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
               </svg>
+              Close
             </button>
           </div>
 
@@ -199,7 +204,8 @@ export default function ResidenceGallery({
           >
             {images[index].alt}
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </div>
   );

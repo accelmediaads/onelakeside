@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
+import { lockScroll, unlockScroll } from "@/lib/scrollLock";
 
 interface ResidenceMediaProps {
   name: string; // e.g. "Residence 401"
@@ -26,18 +28,17 @@ export default function ResidenceMedia({
 }: ResidenceMediaProps) {
   const [modal, setModal] = useState<ModalKind>(null);
 
-  // Close on ESC + lock background scroll while a modal is open.
+  // Close on ESC + lock background scroll (pauses Lenis) while a modal is open.
   useEffect(() => {
     if (!modal) return;
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") setModal(null);
     };
     window.addEventListener("keydown", onKey);
-    const prevOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
+    lockScroll();
     return () => {
       window.removeEventListener("keydown", onKey);
-      document.body.style.overflow = prevOverflow;
+      unlockScroll();
     };
   }, [modal]);
 
@@ -96,8 +97,12 @@ export default function ResidenceMedia({
         )}
       </div>
 
-      {/* Modal — backdrop is dark for focus regardless of the page's light theme */}
-      {modal && (
+      {/* Modal — portaled to <body> so `position: fixed` is relative to the
+          viewport, not the GSAP-transformed FadeIn wrapper this lives inside
+          (a transformed ancestor becomes the containing block for fixed
+          children, which otherwise renders the modal offset down the page). */}
+      {modal &&
+        createPortal(
         <div
           className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-sm"
           onClick={() => setModal(null)}
@@ -109,21 +114,22 @@ export default function ResidenceMedia({
             className="relative w-full max-w-6xl"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Header */}
-            <div className="flex items-center justify-between mb-3">
-              <p className="text-white/90 text-sm tracking-wide">
+            {/* Header — prominent, labeled close so it's obvious + thumb-sized on mobile */}
+            <div className="flex items-center justify-between mb-3 gap-3">
+              <p className="text-white/90 text-sm tracking-wide truncate">
                 <span className="text-[#e6d3a8]">{name}</span>{" "}
                 — {modal === "tour" ? "3D Virtual Tour" : "Floor Plan"}
               </p>
               <button
                 type="button"
                 onClick={() => setModal(null)}
-                className="text-white/70 hover:text-white transition-colors w-9 h-9 flex items-center justify-center rounded-full hover:bg-white/10"
+                className="shrink-0 inline-flex items-center gap-2 bg-white text-[#1f2a30] hover:bg-white/90 transition-colors rounded-full pl-3 pr-4 py-2.5 text-sm font-semibold shadow-lg"
                 aria-label="Close"
               >
-                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
                 </svg>
+                Close
               </button>
             </div>
 
@@ -157,7 +163,8 @@ export default function ResidenceMedia({
               </div>
             )}
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </>
   );
