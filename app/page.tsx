@@ -511,12 +511,16 @@ export default function OneLakesidePage() {
                       className="object-cover"
                       sizes="(max-width: 1024px) 50vw, 25vw"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#10171c]/75 via-transparent to-transparent" />
+                    {/* Stronger bottom-weighted scrim so the white label/caption
+                        stay legible even over the bright sky / lake / gym shots. */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0d1216]/95 via-[#0d1216]/55 to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-5">
-                      <h3 className="text-white text-lg md:text-xl mb-0.5">
+                      <h3 className="text-white text-lg md:text-xl mb-0.5 [text-shadow:0_1px_4px_rgba(13,18,22,0.7)]">
                         {a.label}
                       </h3>
-                      <p className="text-white/80 text-sm">{a.caption}</p>
+                      <p className="text-white/90 text-sm [text-shadow:0_1px_3px_rgba(13,18,22,0.7)]">
+                        {a.caption}
+                      </p>
                     </div>
                   </div>
                 </div>
