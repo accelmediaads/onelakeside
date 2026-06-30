@@ -274,7 +274,7 @@ export default function OneLakesidePage() {
       {/* ============================================================
           INTRO — the building story
           ============================================================ */}
-      <section className="py-20 md:py-28 bg-[#faf8f5]">
+      <section id="overview" className="py-20 md:py-28 bg-[#faf8f5] scroll-mt-20">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <FadeIn>
             <span className="ol-gold-line mx-auto mb-7" />
@@ -349,7 +349,7 @@ export default function OneLakesidePage() {
       {/* ============================================================
           VIDEO TOUR — YouTube
           ============================================================ */}
-      <section className="py-20 md:py-28 bg-[#faf8f5]">
+      <section id="tour" className="py-20 md:py-28 bg-[#faf8f5] scroll-mt-20">
         <div className="max-w-5xl mx-auto px-6 lg:px-8">
           <FadeIn className="text-center mb-10">
             <span className="ol-gold-line mx-auto mb-6" />
@@ -481,7 +481,7 @@ export default function OneLakesidePage() {
       {/* ============================================================
           AMENITIES — building lifestyle
           ============================================================ */}
-      <section className="py-20 md:py-28 bg-[#faf8f5]">
+      <section id="amenities" className="py-20 md:py-28 bg-[#faf8f5] scroll-mt-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <FadeIn className="text-center mb-14 md:mb-16">
             <span className="ol-gold-line mx-auto mb-6" />
@@ -533,7 +533,7 @@ export default function OneLakesidePage() {
       {/* ============================================================
           LOCATION — big statement with marina aerial
           ============================================================ */}
-      <section className="relative py-24 md:py-36 overflow-hidden">
+      <section id="location" className="relative py-24 md:py-36 overflow-hidden scroll-mt-20">
         <Image
           src="/one-lakeside/one-lakeside-downtown-coeur-dalene-marina-aerial.jpg"
           alt="Aerial of One Lakeside, the marina, and downtown Coeur d'Alene"
