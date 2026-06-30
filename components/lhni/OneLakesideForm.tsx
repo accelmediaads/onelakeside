@@ -20,7 +20,7 @@ export interface OneLakesideFormData {
 // Labels mirror the residence sections on the page. Keep these strings stable —
 // they flow straight into the FUB note + email notification.
 const residences = [
-  "Residence 401 — 2 Bedroom",
+  "Residence 401 — 3 Bedroom",
   "Residence 402 — 2 Bedroom",
   "Residence 403 — 1 Bedroom (West / Lake View)",
   "Residence 408 — 1 Bedroom (Oversized Terrace)",

@@ -60,14 +60,14 @@ const residences = [
   {
     unit: "401",
     name: "Residence 401",
-    beds: "2 Bed",
+    beds: "3 Bed",
     baths: "2 Bath",
     sqft: null as string | null,
     price: "Pricing on request",
     facing: "Corner Residence",
-    tagline: "The largest floor plan — a corner home with lake & resort views.",
+    tagline: "The largest floor plan — a 3-bedroom corner home with lake & resort views.",
     blurb:
-      "A rare corner residence with two bedrooms, an open great room wrapped in glass, a full chef's kitchen, and a private deck framing the lake and the resort. The building's most spacious layout.",
+      "A rare three-bedroom corner residence with an open great room wrapped in glass, a full chef's kitchen, and a private deck framing the lake and the resort. The building's most spacious layout.",
     images: [
       { src: "/one-lakeside/one-lakeside-unit-401-living-room.jpg", alt: "Living room of Residence 401 at One Lakeside with floor-to-ceiling windows and lake views" },
       { src: "/one-lakeside/one-lakeside-unit-401-great-room.jpg", alt: "Open great room of Residence 401 with lake views at One Lakeside" },
@@ -75,6 +75,7 @@ const residences = [
       { src: "/one-lakeside/one-lakeside-unit-401-kitchen.jpg", alt: "Island kitchen in Residence 401 at One Lakeside" },
       { src: "/one-lakeside/one-lakeside-unit-401-primary-bedroom.jpg", alt: "Primary bedroom of Residence 401 with lake views at One Lakeside" },
       { src: "/one-lakeside/one-lakeside-unit-401-second-bedroom.jpg", alt: "Second bedroom in Residence 401 at One Lakeside" },
+      { src: "/one-lakeside/one-lakeside-unit-401-third-bedroom.jpg", alt: "Third bedroom in Residence 401 at One Lakeside" },
       { src: "/one-lakeside/one-lakeside-unit-401-bathroom.jpg", alt: "Bathroom with double vanity in Residence 401 at One Lakeside" },
       { src: "/one-lakeside/one-lakeside-unit-401-lake-view-deck.jpg", alt: "Private deck of Residence 401 overlooking Lake Coeur d'Alene and the resort" },
     ],
