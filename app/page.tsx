@@ -7,6 +7,7 @@ import FadeIn from "@/components/scroll/FadeIn";
 import TextReveal from "@/components/scroll/TextReveal";
 import OneLakesideForm from "@/components/lhni/OneLakesideForm";
 import ResidenceMedia from "@/components/lhni/ResidenceMedia";
+import ResidenceGallery from "@/components/lhni/ResidenceGallery";
 
 export const metadata: Metadata = {
   title: "One Lakeside — Luxury Lakefront Condos in Downtown Coeur d'Alene",
@@ -67,22 +68,15 @@ const residences = [
     tagline: "The largest floor plan — a corner home with lake & resort views.",
     blurb:
       "A rare corner residence with two bedrooms, an open great room wrapped in glass, a full chef's kitchen, and a private deck framing the lake and the resort. The building's most spacious layout.",
-    hero: "/one-lakeside/one-lakeside-unit-401-living-room.jpg",
-    heroAlt:
-      "Living room of Residence 401 at One Lakeside with floor-to-ceiling windows and lake views",
-    gallery: [
-      {
-        src: "/one-lakeside/one-lakeside-unit-401-kitchen-dining.jpg",
-        alt: "Open kitchen and dining area in Residence 401 at One Lakeside",
-      },
-      {
-        src: "/one-lakeside/one-lakeside-unit-401-primary-bedroom.jpg",
-        alt: "Primary bedroom in Residence 401 at One Lakeside",
-      },
-      {
-        src: "/one-lakeside/one-lakeside-unit-401-lake-view-deck.jpg",
-        alt: "Private deck of Residence 401 overlooking Lake Coeur d'Alene and the resort",
-      },
+    images: [
+      { src: "/one-lakeside/one-lakeside-unit-401-living-room.jpg", alt: "Living room of Residence 401 at One Lakeside with floor-to-ceiling windows and lake views" },
+      { src: "/one-lakeside/one-lakeside-unit-401-great-room.jpg", alt: "Open great room of Residence 401 with lake views at One Lakeside" },
+      { src: "/one-lakeside/one-lakeside-unit-401-dining.jpg", alt: "Dining area of Residence 401 overlooking Lake Coeur d'Alene" },
+      { src: "/one-lakeside/one-lakeside-unit-401-kitchen.jpg", alt: "Island kitchen in Residence 401 at One Lakeside" },
+      { src: "/one-lakeside/one-lakeside-unit-401-primary-bedroom.jpg", alt: "Primary bedroom of Residence 401 with lake views at One Lakeside" },
+      { src: "/one-lakeside/one-lakeside-unit-401-second-bedroom.jpg", alt: "Second bedroom in Residence 401 at One Lakeside" },
+      { src: "/one-lakeside/one-lakeside-unit-401-bathroom.jpg", alt: "Bathroom with double vanity in Residence 401 at One Lakeside" },
+      { src: "/one-lakeside/one-lakeside-unit-401-lake-view-deck.jpg", alt: "Private deck of Residence 401 overlooking Lake Coeur d'Alene and the resort" },
     ],
   },
   {
@@ -96,22 +90,15 @@ const residences = [
     tagline: "A designer two-bedroom corner home above the water.",
     blurb:
       "Sunlight on three sides, an island kitchen, in-residence laundry, and a wraparound deck that takes in the lake, the marina, and downtown all at once. Offered beautifully furnished.",
-    hero: "/one-lakeside/one-lakeside-unit-402-living-room.jpg",
-    heroAlt:
-      "Open living room of Residence 402 at One Lakeside with corner windows and designer furnishings",
-    gallery: [
-      {
-        src: "/one-lakeside/one-lakeside-unit-402-island-kitchen.jpg",
-        alt: "Island kitchen in Residence 402 at One Lakeside",
-      },
-      {
-        src: "/one-lakeside/one-lakeside-unit-402-bedroom.jpg",
-        alt: "Bedroom in Residence 402 at One Lakeside",
-      },
-      {
-        src: "/one-lakeside/one-lakeside-unit-402-lake-downtown-deck.jpg",
-        alt: "Wraparound deck of Residence 402 overlooking the lake and downtown Coeur d'Alene",
-      },
+    images: [
+      { src: "/one-lakeside/one-lakeside-unit-402-living-room.jpg", alt: "Open living room of Residence 402 at One Lakeside with corner windows and designer furnishings" },
+      { src: "/one-lakeside/one-lakeside-unit-402-great-room.jpg", alt: "Great room of Residence 402 with blue furnishings and lake views" },
+      { src: "/one-lakeside/one-lakeside-unit-402-island-kitchen.jpg", alt: "Island kitchen in Residence 402 at One Lakeside" },
+      { src: "/one-lakeside/one-lakeside-unit-402-dining.jpg", alt: "Dining nook of Residence 402 with lake views at One Lakeside" },
+      { src: "/one-lakeside/one-lakeside-unit-402-primary-bedroom.jpg", alt: "Primary bedroom of Residence 402 with lake views at One Lakeside" },
+      { src: "/one-lakeside/one-lakeside-unit-402-second-bedroom.jpg", alt: "Second bedroom in Residence 402 at One Lakeside" },
+      { src: "/one-lakeside/one-lakeside-unit-402-bathroom.jpg", alt: "Bathroom with double vanity in Residence 402 at One Lakeside" },
+      { src: "/one-lakeside/one-lakeside-unit-402-lake-downtown-deck.jpg", alt: "Wraparound deck of Residence 402 overlooking the lake and downtown Coeur d'Alene" },
     ],
   },
   {
@@ -125,22 +112,15 @@ const residences = [
     tagline: "The largest one-bedroom — west-facing with a lake-view deck.",
     blurb:
       "A bright, west-facing one-bedroom with the most square footage of the one-bed homes, a full kitchen with island seating, in-residence laundry, and a lakeview deck for the sunset. Offered fully furnished.",
-    hero: "/one-lakeside/one-lakeside-unit-403-living-room.jpg",
-    heroAlt:
-      "Living room of Residence 403 at One Lakeside with west-facing windows and lake views",
-    gallery: [
-      {
-        src: "/one-lakeside/one-lakeside-unit-403-kitchen.jpg",
-        alt: "Full kitchen with island in Residence 403 at One Lakeside",
-      },
-      {
-        src: "/one-lakeside/one-lakeside-unit-403-bedroom.jpg",
-        alt: "Bedroom in Residence 403 at One Lakeside",
-      },
-      {
-        src: "/one-lakeside/one-lakeside-unit-403-west-lake-view-deck.jpg",
-        alt: "West-facing lake-view deck of Residence 403 at One Lakeside",
-      },
+    images: [
+      { src: "/one-lakeside/one-lakeside-unit-403-living-room.jpg", alt: "Living room of Residence 403 at One Lakeside with west-facing windows and lake views" },
+      { src: "/one-lakeside/one-lakeside-unit-403-great-room.jpg", alt: "Great room of Residence 403 with seating and lake views at One Lakeside" },
+      { src: "/one-lakeside/one-lakeside-unit-403-dining.jpg", alt: "Dining nook of Residence 403 beside the lake-view deck" },
+      { src: "/one-lakeside/one-lakeside-unit-403-kitchen.jpg", alt: "Full kitchen with island in Residence 403 at One Lakeside" },
+      { src: "/one-lakeside/one-lakeside-unit-403-bedroom.jpg", alt: "Bedroom in Residence 403 at One Lakeside" },
+      { src: "/one-lakeside/one-lakeside-unit-403-bathroom.jpg", alt: "Bathroom in Residence 403 at One Lakeside" },
+      { src: "/one-lakeside/one-lakeside-unit-403-west-lake-view-deck.jpg", alt: "West-facing lake-view deck of Residence 403 at One Lakeside" },
+      { src: "/one-lakeside/one-lakeside-unit-403-lake-panorama.jpg", alt: "Lake Coeur d'Alene panorama from the deck of Residence 403" },
     ],
   },
   {
@@ -154,22 +134,15 @@ const residences = [
     tagline: "A one-bedroom with an enormous private terrace over the city.",
     blurb:
       "An east-facing one-bedroom whose standout feature is the oversized private terrace — room to dine, lounge, and entertain above downtown, with peek-a-boo lake views. Offered fully furnished.",
-    hero: "/one-lakeside/one-lakeside-unit-408-living-room.jpg",
-    heroAlt:
-      "Living room of Residence 408 at One Lakeside opening to an oversized private terrace",
-    gallery: [
-      {
-        src: "/one-lakeside/one-lakeside-unit-408-living-dining.jpg",
-        alt: "Living and dining area in Residence 408 at One Lakeside",
-      },
-      {
-        src: "/one-lakeside/one-lakeside-unit-408-kitchen.jpg",
-        alt: "Kitchen in Residence 408 at One Lakeside",
-      },
-      {
-        src: "/one-lakeside/one-lakeside-unit-408-private-terrace.jpg",
-        alt: "Oversized private terrace of Residence 408 overlooking downtown Coeur d'Alene",
-      },
+    images: [
+      { src: "/one-lakeside/one-lakeside-unit-408-living-room.jpg", alt: "Living room of Residence 408 at One Lakeside opening to an oversized private terrace" },
+      { src: "/one-lakeside/one-lakeside-unit-408-living-dining.jpg", alt: "Living and dining area in Residence 408 at One Lakeside" },
+      { src: "/one-lakeside/one-lakeside-unit-408-dining.jpg", alt: "Dining area of Residence 408 with downtown views" },
+      { src: "/one-lakeside/one-lakeside-unit-408-kitchen.jpg", alt: "Kitchen in Residence 408 at One Lakeside" },
+      { src: "/one-lakeside/one-lakeside-unit-408-bedroom.jpg", alt: "Bedroom in Residence 408 at One Lakeside" },
+      { src: "/one-lakeside/one-lakeside-unit-408-bathroom.jpg", alt: "Bathroom in Residence 408 at One Lakeside" },
+      { src: "/one-lakeside/one-lakeside-unit-408-private-terrace.jpg", alt: "Oversized private terrace of Residence 408 overlooking downtown Coeur d'Alene" },
+      { src: "/one-lakeside/one-lakeside-unit-408-terrace-city-view.jpg", alt: "Private terrace lounge of Residence 408 with downtown city views" },
     ],
   },
   {
@@ -183,22 +156,15 @@ const residences = [
     tagline: "A single-level, fully accessible one-bedroom with a big terrace.",
     blurb:
       "An east-facing, ADA-accessible one-bedroom with a step-free layout, roll-in shower, full kitchen, in-residence laundry, and a generous private terrace overlooking the city. Offered fully furnished.",
-    hero: "/one-lakeside/one-lakeside-unit-410-living-room.jpg",
-    heroAlt:
-      "Living room of Residence 410 at One Lakeside, a single-level accessible home",
-    gallery: [
-      {
-        src: "/one-lakeside/one-lakeside-unit-410-kitchen.jpg",
-        alt: "Kitchen in Residence 410 at One Lakeside",
-      },
-      {
-        src: "/one-lakeside/one-lakeside-unit-410-accessible-bathroom.jpg",
-        alt: "Accessible bathroom with roll-in shower in Residence 410 at One Lakeside",
-      },
-      {
-        src: "/one-lakeside/one-lakeside-unit-410-terrace-city-view.jpg",
-        alt: "Private terrace of Residence 410 with city views at One Lakeside",
-      },
+    images: [
+      { src: "/one-lakeside/one-lakeside-unit-410-living-room.jpg", alt: "Living room of Residence 410 at One Lakeside, a single-level accessible home" },
+      { src: "/one-lakeside/one-lakeside-unit-410-great-room.jpg", alt: "Great room of Residence 410 with striped rug and city views" },
+      { src: "/one-lakeside/one-lakeside-unit-410-dining.jpg", alt: "Dining area and kitchen in Residence 410 at One Lakeside" },
+      { src: "/one-lakeside/one-lakeside-unit-410-kitchen.jpg", alt: "Kitchen in Residence 410 at One Lakeside" },
+      { src: "/one-lakeside/one-lakeside-unit-410-bedroom.jpg", alt: "Bedroom in Residence 410 with city views at One Lakeside" },
+      { src: "/one-lakeside/one-lakeside-unit-410-accessible-bathroom.jpg", alt: "Accessible bathroom with roll-in shower in Residence 410 at One Lakeside" },
+      { src: "/one-lakeside/one-lakeside-unit-410-terrace-city-view.jpg", alt: "Private terrace of Residence 410 with city views at One Lakeside" },
+      { src: "/one-lakeside/one-lakeside-unit-410-terrace.jpg", alt: "Private terrace seating of Residence 410 at One Lakeside" },
     ],
   },
 ];
@@ -434,19 +400,9 @@ export default function OneLakesidePage() {
               return (
                 <FadeIn key={r.unit}>
                   <div className="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center">
-                    {/* Hero image */}
-                    <div
-                      className={`ol-zoom relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg ${
-                        flip ? "lg:order-2" : ""
-                      }`}
-                    >
-                      <Image
-                        src={r.hero}
-                        alt={r.heroAlt}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 1024px) 100vw, 50vw"
-                      />
+                    {/* Image gallery — click any photo to open the lightbox */}
+                    <div className={flip ? "lg:order-2" : ""}>
+                      <ResidenceGallery name={r.name} images={r.images} />
                     </div>
 
                     {/* Detail */}
@@ -483,24 +439,6 @@ export default function OneLakesidePage() {
                       <p className="text-[#50606a] leading-relaxed mb-6">
                         {r.blurb}
                       </p>
-
-                      {/* Mini gallery */}
-                      <div className="grid grid-cols-3 gap-3 mb-5">
-                        {r.gallery.map((g) => (
-                          <div
-                            key={g.src}
-                            className="ol-zoom relative aspect-square rounded-lg overflow-hidden"
-                          >
-                            <Image
-                              src={g.src}
-                              alt={g.alt}
-                              fill
-                              className="object-cover"
-                              sizes="(max-width: 1024px) 33vw, 16vw"
-                            />
-                          </div>
-                        ))}
-                      </div>
 
                       {/* 3D tour + floor plan (lazy — load only on click) */}
                       <div className="mb-7">
